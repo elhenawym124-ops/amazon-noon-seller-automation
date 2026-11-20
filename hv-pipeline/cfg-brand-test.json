@@ -1,0 +1,36 @@
+{
+ "productType": "HOME_ORGANIZERS_AND_STORAGE",
+ "browseNode": "21863799031",
+ "brand": "HomeVista",
+ "quantity": 99,
+ "products": [
+  {
+   "sku": "HV-078",
+   "title": "ترمس كوفي coffee - منظم وتخزين منزلي عملي للمنزل والمطبخ",
+   "price": 330,
+   "images": [
+    "https://files.catbox.moe/4okahr.jpg",
+    "https://files.catbox.moe/chxpux.jpg",
+    "https://files.catbox.moe/vpi3ww.jpg",
+    "https://files.catbox.moe/ehpgrq.jpg",
+    "https://files.catbox.moe/9obgml.jpg",
+    "https://files.catbox.moe/iqb2ro.jpg",
+    "https://files.catbox.moe/1i601z.jpg",
+    "https://files.catbox.moe/sr21gh.jpg"
+   ],
+   "description": "منظم وتخزين منزلي من ستانلس ستيل بتصميم عملي يناسب الاستخدام اليومي في المنزل والمطبخ. السعة 510 ملليلتر. ترمس كوفي coffee مج حراري استيل 316 مختوم بيحفظ درجه الحراره 6 الي 8 ساعات ولسه اللي جي احلا مع سامح جروب",
+   "bullets": [
+    "ترمس كوفي coffee",
+    "مج حراري استيل 316 مختوم",
+    "بيحفظ درجه الحراره 6 الي 8 ساعات",
+    "سعه 510 مللي",
+    "ولسه اللي جي احلا مع سامح جروب"
+   ],
+   "material": "ستانلس ستيل",
+   "color": "متعدد الألوان",
+   "weightGrams": 700,
+   "modelName": "HV-078",
+   "capacity": 510
+  }
+ ]
+}

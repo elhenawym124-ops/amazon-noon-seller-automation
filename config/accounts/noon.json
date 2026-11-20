@@ -1,0 +1,8 @@
+{
+  "name": "noon",
+  "title": "Noon Seller (Elsherbiny factory)",
+  "profile": "H:\\amzain\\profiles\\noon-seller",
+  "chrome": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "cdpPort": 9222,
+  "portal": "https://sell.noon.com/"
+}

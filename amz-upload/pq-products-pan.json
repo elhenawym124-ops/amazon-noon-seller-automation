@@ -1,0 +1,52 @@
+{
+ "products": [
+  {
+   "sku": "LVP-027",
+   "price": 473
+  },
+  {
+   "sku": "LVP-028",
+   "price": 1188
+  },
+  {
+   "sku": "LVP-029",
+   "price": 1188
+  },
+  {
+   "sku": "LVP-030",
+   "price": 1089
+  },
+  {
+   "sku": "LVP-031",
+   "price": 1287
+  },
+  {
+   "sku": "LVP-033",
+   "price": 1485
+  },
+  {
+   "sku": "LVP-034",
+   "price": 1087.02
+  },
+  {
+   "sku": "LVP-035",
+   "price": 980.1
+  },
+  {
+   "sku": "LVP-036",
+   "price": 569.25
+  },
+  {
+   "sku": "LVP-037",
+   "price": 222.75
+  },
+  {
+   "sku": "LVP-038",
+   "price": 915.75
+  },
+  {
+   "sku": "LVP-039",
+   "price": 980.1
+  }
+ ]
+}

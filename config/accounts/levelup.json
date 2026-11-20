@@ -1,0 +1,8 @@
+{
+  "name": "levelup",
+  "title": "Level-Up (Amazon EG)",
+  "profile": "H:\\amzain\\profiles\\levelup",
+  "chrome": "C:\\Users\\mokhtar\\AppData\\Local\\ms-playwright\\chromium-1248\\chrome-win64\\chrome.exe",
+  "cdpPort": 9443,
+  "portal": "https://sellercentral.amazon.eg/"
+}

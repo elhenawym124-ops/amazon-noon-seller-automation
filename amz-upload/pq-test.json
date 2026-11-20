@@ -1,0 +1,14 @@
+{
+ "qty": 99,
+ "always": "Disabled",
+ "products": [
+  {
+   "sku": "LVP-001",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-005",
+   "price": 188.1
+  }
+ ]
+}

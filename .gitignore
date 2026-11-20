@@ -1,0 +1,26 @@
+# browser sessions - never version, never sync to cloud
+profiles/
+
+# secrets
+secrets/
+
+# dependencies
+node_modules/
+
+# generated / large binaries
+output/
+logs/
+archive/
+data/raw/
+data/cache/
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.png
+*.jpg
+*.log
+
+# OS noise
+Thumbs.db
+desktop.ini

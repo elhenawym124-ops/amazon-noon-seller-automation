@@ -1,0 +1,234 @@
+{
+ "qty": 99,
+ "always": "Disabled",
+ "products": [
+  {
+   "sku": "LVP-065",
+   "price": 633.6
+  },
+  {
+   "sku": "LVP-082",
+   "price": 925.65
+  },
+  {
+   "sku": "LVP-083",
+   "price": 915.75
+  },
+  {
+   "sku": "LVP-084",
+   "price": 871.2
+  },
+  {
+   "sku": "LVP-089",
+   "price": 980.1
+  },
+  {
+   "sku": "LVP-093",
+   "price": 980.1
+  },
+  {
+   "sku": "LVP-100",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-102",
+   "price": 173.25
+  },
+  {
+   "sku": "LVP-115",
+   "price": 381.15
+  },
+  {
+   "sku": "LVP-118",
+   "price": 1386
+  },
+  {
+   "sku": "LVP-121",
+   "price": 1485
+  },
+  {
+   "sku": "LVP-125",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-132",
+   "price": 1384.02
+  },
+  {
+   "sku": "LVP-140",
+   "price": 2603.7
+  },
+  {
+   "sku": "LVP-141",
+   "price": 381.15
+  },
+  {
+   "sku": "LVP-142",
+   "price": 235.62
+  },
+  {
+   "sku": "LVP-143",
+   "price": 247.5
+  },
+  {
+   "sku": "LVP-144",
+   "price": 460.35
+  },
+  {
+   "sku": "LVP-145",
+   "price": 1683
+  },
+  {
+   "sku": "LVP-146",
+   "price": 168.3
+  },
+  {
+   "sku": "LVP-147",
+   "price": 653.4
+  },
+  {
+   "sku": "LVP-148",
+   "price": 1178.1
+  },
+  {
+   "sku": "LVP-149",
+   "price": 165
+  },
+  {
+   "sku": "LVP-150",
+   "price": 186.12
+  },
+  {
+   "sku": "LVP-151",
+   "price": 173.25
+  },
+  {
+   "sku": "LVP-152",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-153",
+   "price": 272.25
+  },
+  {
+   "sku": "LVP-154",
+   "price": 544.5
+  },
+  {
+   "sku": "LVP-155",
+   "price": 707.85
+  },
+  {
+   "sku": "LVP-156",
+   "price": 925.65
+  },
+  {
+   "sku": "LVP-157",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-158",
+   "price": 242.55
+  },
+  {
+   "sku": "LVP-159",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-160",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-161",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-162",
+   "price": 148.5
+  },
+  {
+   "sku": "LVP-163",
+   "price": 173.25
+  },
+  {
+   "sku": "LVP-164",
+   "price": 173.25
+  },
+  {
+   "sku": "LVP-167",
+   "price": 222.75
+  },
+  {
+   "sku": "LVP-168",
+   "price": 2145
+  },
+  {
+   "sku": "LVP-169",
+   "price": 2138.4
+  },
+  {
+   "sku": "LVP-170",
+   "price": 2049.3
+  },
+  {
+   "sku": "LVP-171",
+   "price": 1980
+  },
+  {
+   "sku": "LVP-172",
+   "price": 1584
+  },
+  {
+   "sku": "LVP-173",
+   "price": 1514.7
+  },
+  {
+   "sku": "LVP-174",
+   "price": 1485
+  },
+  {
+   "sku": "LVP-175",
+   "price": 1485
+  },
+  {
+   "sku": "LVP-176",
+   "price": 1386
+  },
+  {
+   "sku": "LVP-177",
+   "price": 1188
+  },
+  {
+   "sku": "LVP-178",
+   "price": 1089
+  },
+  {
+   "sku": "LVP-180",
+   "price": 980.1
+  },
+  {
+   "sku": "LVP-181",
+   "price": 978.12
+  },
+  {
+   "sku": "LVP-182",
+   "price": 925.65
+  },
+  {
+   "sku": "LVP-183",
+   "price": 871.2
+  },
+  {
+   "sku": "LVP-184",
+   "price": 851.4
+  },
+  {
+   "sku": "LVP-185",
+   "price": 816.75
+  },
+  {
+   "sku": "LVP-186",
+   "price": 762.3
+  }
+ ]
+}

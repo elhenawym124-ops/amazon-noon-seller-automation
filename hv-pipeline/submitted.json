@@ -1,0 +1,201 @@
+{
+ "batches": [
+  {
+   "n": 1,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "file": "hv_org_1_feed.xlsx",
+   "skus": [
+    "HV-004",
+    "HV-005",
+    "HV-006",
+    "HV-007",
+    "HV-008",
+    "HV-012",
+    "HV-015",
+    "HV-016",
+    "HV-017",
+    "HV-018"
+   ],
+   "status": "submitted",
+   "id": "50140020768",
+   "note": "8/10 successful",
+   "ready": 8,
+   "failed": 2
+  },
+  {
+   "n": 3,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": null,
+   "file": "hv_org_3_feed.xlsx",
+   "skus": [
+    "HV-039",
+    "HV-040",
+    "HV-041",
+    "HV-042",
+    "HV-043",
+    "HV-044",
+    "HV-045",
+    "HV-046",
+    "HV-047",
+    "HV-049",
+    "HV-050",
+    "HV-051",
+    "HV-052",
+    "HV-053",
+    "HV-058"
+   ],
+   "status": "submitted",
+   "tmp": "cfg-home-organizers-and-storage-1.json",
+   "id": "50141020768",
+   "ready": 15,
+   "failed": 0
+  },
+  {
+   "n": 4,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-4.json",
+   "file": "hv_home_4_feed.xlsx",
+   "skus": [
+    "HV-019",
+    "HV-022",
+    "HV-025",
+    "HV-027",
+    "HV-028",
+    "HV-029",
+    "HV-030",
+    "HV-031",
+    "HV-032",
+    "HV-033",
+    "HV-034",
+    "HV-035",
+    "HV-036",
+    "HV-037",
+    "HV-038"
+   ],
+   "status": "submitted",
+   "id": "50142020768",
+   "ready": 13,
+   "failed": 2
+  },
+  {
+   "n": 5,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-5.json",
+   "file": "hv_home_5_feed.xlsx",
+   "skus": [
+    "HV-061",
+    "HV-063",
+    "HV-066",
+    "HV-068",
+    "HV-069",
+    "HV-070",
+    "HV-071",
+    "HV-072",
+    "HV-073",
+    "HV-075",
+    "HV-076",
+    "HV-077",
+    "HV-078",
+    "HV-079",
+    "HV-080"
+   ],
+   "status": "submitted",
+   "id": "50143020768",
+   "ready": 11,
+   "failed": 4
+  },
+  {
+   "n": 6,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-6.json",
+   "file": "hv_home_6_feed.xlsx",
+   "skus": [
+    "HV-081",
+    "HV-082",
+    "HV-083",
+    "HV-085",
+    "HV-086",
+    "HV-088",
+    "HV-089",
+    "HV-091",
+    "HV-094",
+    "HV-095",
+    "HV-096",
+    "HV-097",
+    "HV-099",
+    "HV-100",
+    "HV-102"
+   ],
+   "status": "submitted",
+   "id": "50144020768",
+   "ready": 11,
+   "failed": 4
+  },
+  {
+   "n": 7,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-7.json",
+   "file": "hv_home_7_feed.xlsx",
+   "skus": [
+    "HV-104",
+    "HV-106",
+    "HV-107",
+    "HV-109",
+    "HV-110",
+    "HV-111",
+    "HV-112",
+    "HV-113",
+    "HV-114",
+    "HV-115",
+    "HV-116",
+    "HV-117",
+    "HV-118",
+    "HV-119",
+    "HV-120"
+   ],
+   "status": "submitted",
+   "id": "50145020768",
+   "ready": 14,
+   "failed": 1
+  },
+  {
+   "n": 8,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "file": "hv_org_8_feed.xlsx",
+   "skus": [
+    "HV-122"
+   ],
+   "status": "submitted",
+   "id": "50146020768",
+   "ready": 1,
+   "failed": 0
+  },
+  {
+   "n": 9,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-9.json",
+   "file": "hv_home_9_feed.xlsx",
+   "skus": [
+    "HV-123",
+    "HV-124",
+    "HV-125",
+    "HV-127",
+    "HV-128"
+   ],
+   "status": "planned"
+  },
+  {
+   "n": 10,
+   "type": "HOME_ORGANIZERS_AND_STORAGE",
+   "cfgFile": "cfg-home-organizers-and-storage-10.json",
+   "file": "hv_home_10_feed.xlsx",
+   "skus": [
+    "HV-129",
+    "HV-131",
+    "HV-132",
+    "HV-134"
+   ],
+   "status": "planned"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+const fs = require('fs');
+const txt = fs.readFileSync('summaries/active_listings_10nov.txt', 'utf8');
+const lines = txt.split(/\r?\n/).filter(Boolean);
+const hdr = lines[0].replace(/^\uFEFF/, '').split('\t');
+const idx = n => hdr.indexOf(n);
+const iSku = idx('seller-sku'), iQty = idx('quantity'), iPrice = idx('price'), iAsin = idx('asin1');
+const rows = lines.slice(1).map(l => l.split('\t')).filter(c => /^LVP-/.test(c[iSku] || ''));
+const low = rows.filter(c => (c[iQty] || '0') !== '99');
+console.log('SKUs below 99:', low.length);
+console.log(low.map(c => c[iSku] + '=' + c[iQty]).join(', '));
+fs.writeFileSync('low_qty.json', JSON.stringify(low.map(c => ({ sku: c[iSku], qty: c[iQty], price: c[iPrice], asin: c[iAsin] })), null, 1), 'utf8');

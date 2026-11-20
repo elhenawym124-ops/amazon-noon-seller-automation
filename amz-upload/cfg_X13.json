@@ -1,0 +1,27 @@
+{
+ "productType": "KITCHEN_TOOLS",
+ "browseNode": "21864567031",
+ "quantity": 99,
+ "brand": "Generic",
+ "inferMaterial": true,
+ "products": [
+  {
+   "sku": "LVP-165",
+   "refAsin": "B0HJJKBVRP",
+   "title": "حقنة توابل للمطبخ",
+   "price": 186.12,
+   "weightGrams": 700,
+   "modelName": "LVP-165",
+   "color": "متعدد الألوان",
+   "description": "حقنة توابل عملية لإضافة النكهات إلى اللحوم والدواجن أثناء التحضير.",
+   "bullets": [
+    "تصميم عملي سهل الاستخدام.",
+    "مناسبة للمطبخ المنزلي."
+   ],
+   "images": [
+    "https://m.media-amazon.com/images/I/41xn5135SwL._SL1500_.jpg"
+   ],
+   "browseNode": "21864567031"
+  }
+ ]
+}

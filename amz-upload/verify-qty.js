@@ -1,0 +1,18 @@
+const fs = require('fs');
+const txt = fs.readFileSync('summaries/all_listings_latest.txt', 'utf8');
+const lines = txt.split(/\r?\n/).filter(Boolean);
+const hdr = lines[0].replace(/^\uFEFF/, '').split('\t');
+const idx = n => hdr.indexOf(n);
+const iSku = idx('seller-sku'), iQty = idx('quantity'), iPrice = idx('price'), iStatus = idx('status');
+const rows = lines.slice(1).map(l => l.split('\t')).filter(c => /^LVP-/.test(c[iSku] || ''));
+const byQty = {};
+for (const c of rows) byQty[c[iQty]] = (byQty[c[iQty]] || 0) + 1;
+const byStatus = {};
+for (const c of rows) byStatus[c[iStatus]] = (byStatus[c[iStatus]] || 0) + 1;
+console.log('our SKUs:', rows.length);
+console.log('quantity:', JSON.stringify(byQty));
+console.log('status:', JSON.stringify(byStatus));
+const low = rows.filter(c => (c[iQty] || '0') !== '99');
+console.log('still below 99:', low.length, low.map(c => c[iSku] + '=' + c[iQty]).join(', '));
+const noPrice = rows.filter(c => !parseFloat(c[iPrice]));
+console.log('no price:', noPrice.length);

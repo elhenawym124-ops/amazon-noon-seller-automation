@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "sku": "LVP-006", "price": 181.5 },
+    { "sku": "LVP-007", "price": 181.5 },
+    { "sku": "LVP-008", "price": 181.5 },
+    { "sku": "LVP-009", "price": 181.5 },
+    { "sku": "LVP-010", "price": 181.5 },
+    { "sku": "LVP-011", "price": 225.72 }
+  ]
+}
