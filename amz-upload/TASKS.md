@@ -17,10 +17,11 @@
   مش بالحرف: قشارة/مقشرة/تقشير = peeler، بخاخة/بخاخ/رش = sprayer، قطاعة/قطاعات = cutters)
 
 ## الإجراء لأي دفعة جديدة
-1. `node build-remaining.js` أو `node build-from-list.js cfg.json` لبناء JSON من بيانات المتجر
-2. `node build-feed.js <TEMPLATE> cfg.json out.xlsx`
-   - `KT_AR2.xlsm` = KITCHEN_TOOLS (212 عمود)
-   - `AR2.xlsx` = HOME_ORGANIZERS_AND_STORAGE (190 عمود)
+1. `node src/build-remaining.js` أو `node src/build-from-list.js config/cfg-ar2.json` لبناء JSON من بيانات المتجر
+2. `node src/build-feed.js templates/KT_AR2.xlsm config/cfg_H1.json output/feeds/H1_KT.xlsx`
+   - `templates/KT_AR2.xlsm` = KITCHEN_TOOLS (212 عمود)
+   - `templates/AR2.xlsx` = HOME_ORGANIZERS_AND_STORAGE (190 عمود)
+   - المسارات النسبية بتتحسب من جذر `amz-upload` مهما كان الـ cwd
 3. رفع: `/listing/status` → زر "Upload your spreadsheet" → انتظر مونتاج الصفحة
    (لازم `page.reload()` بعد الـ goto وإلا الصفحة تفضل فاضية)
 4. `setInputFiles('input#kat-file-attachment')` → `.upload-preview-btn` (Validate your file)
@@ -95,11 +96,17 @@
 - باقي المتجر العربي (53 SKU) اتبنوا في `H1–H6` بأرقام **LVP-500…552**.
 
 ## ملفات مهمة
-- `build-feed.js` — يبني ملف الرفع (فيه: sanitizeTitle, inferMaterial, وحدة العد)
-- `build-from-list.js` — يبني JSON من بيانات المتجر لأسانيز محددة
-- `build-remaining.js` — يبني كل العربي اللي لسه ما اترفعش
-- `mksub.js` — يعمل cfg بدفعة فرعية من JSON موجود
-- `build-failed2.js` — يبني دفعات إعادة رفع الصفوف الفاشلة
-- `MY_PRODUCTS.csv` — كل المنتجات اللي اتعملت
-- `summaries/` — تقارير المعالجة (Processing Summary) لكل دفعة
-- `credentials.txt` — **مش موجود في المجلد** (لازم يتضاف)
+- `src/build-feed.js` — يبني ملف الرفع (فيه: sanitizeTitle, inferMaterial, وحدة العد)
+- `src/build-from-list.js` — يبني JSON من بيانات المتجر لأسانيز محددة
+- `src/build-remaining.js` — يبني كل العربي اللي لسه ما اترفعش
+- `src/classify.js` — يقرأ `data/page|asc|desc_*.json` ويكتب `data/merged.json`
+- `src/make-plan.js` — يكتب `output/reports/BATCH_PLAN.csv|html`
+- `src/mksub.js` — يعمل cfg بدفعة فرعية من JSON موجود
+- `src/legacy/build-failed2.js` — يبني دفعات إعادة رفع الصفوف الفاشلة
+- `config/` — كل عدادات المنتجات (`products_*.json`, `cfg_*.json`, `w1_*.json`)
+- `templates/` — نماذج أمازون (`*.xlsm`, `AR2.xlsx`, `ORG_EN.xlsx`)
+- `data/` — بيانات المتجر الخام + `merged.json`
+- `output/feeds/` — ملفات الرفع الجاهزة (`*.xlsx`)
+- `output/summaries/` — تقارير المعالجة (Processing Summary) لكل دفعة
+- `output/reports/` — `BATCH_PLAN`, `RESULTS`, `MY_PRODUCTS.csv`, `low_qty.json`
+- `../../secrets/credentials.txt` — **بره المجلد ده** (في `H:\amzain\secrets`)

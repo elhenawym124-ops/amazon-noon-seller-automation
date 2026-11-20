@@ -25,6 +25,11 @@ H:\amzain\
 │  └─ cdp.js                 عميل CDP سريع (اختياري)
 │
 ├─ amz-upload\               بناء فيدات أمازون ورفعها (Level-Up + HomeVista)
+│  ├─ src\                   الكود
+│  ├─ config\                عدادات المنتجات
+│  ├─ data\                  بيانات المتجر + merged.json
+│  ├─ templates\             نماذج أمازون
+│  └─ output\feeds|summaries|reports\
 ├─ hv-pipeline\              خط بيانات HomeVista (سكرابنج → فلترة → listings)
 ├─ noon-upload\              فيدات نون (NIS / أسعار / مخزون)
 ├─ browsers\noon-seller\     أدوات وسكريبتات نون + قوالبها
@@ -68,8 +73,11 @@ powershell -ExecutionPolicy Bypass -File H:\amzain\scripts\open-noon.ps1
 
 ## المخرجات
 
-الفيدات والملخصات لسه بتتولد جوه مجلدات الموديولات (`amz-upload`, `noon-upload`) لحد ما
-تخلص مرحلة فصل `src / config / data / output`. دي الخطوة الجاية ومحتاجة اختبار لكل flow.
+`amz-upload` اتقسم بالكامل: الكود في `src\`، العدادات في `config\`، البيانات في `data\`،
+والفيدات والملخصات والتقارير في `output\`. التفاصيل والأوامر في `amz-upload\README.md`.
+
+`hv-pipeline` و`noon-upload` لسه بتخطيطهم القديم — نفس التقسيمة هتتطبق عليهم
+بالترتيب مع اختبار بعد كل موديول.
 
 ## نسخة احتياطية
 

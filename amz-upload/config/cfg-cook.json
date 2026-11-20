@@ -1,0 +1,28 @@
+{
+ "productType": "COOKWARE_SET",
+ "browseNode": "51375954031",
+ "startSku": 340,
+ "outFile": "products_cook.json",
+ "defaultWeight": 900,
+ "asins": [
+  "B0HL58NHYV",
+  "B0HJYY2CGL",
+  "B0HHP8S1MY",
+  "B0HHPT4K5M",
+  "B0HL55GLW9",
+  "B0HM1Y889C",
+  "B0HL5HY5W6",
+  "B0HL5DC4VG",
+  "B0HL5BBDVS",
+  "B0HL3S2P1M",
+  "B0HJMWLG36",
+  "B0HHSL9W2B",
+  "B0HHPT1YZG",
+  "B0HJMRXNRF",
+  "B0HHQQHS2J",
+  "B0HHTN81CX",
+  "B0HL5DZGNM",
+  "B0HKTCTKRR",
+  "B0HL5CL9B3"
+ ]
+}
