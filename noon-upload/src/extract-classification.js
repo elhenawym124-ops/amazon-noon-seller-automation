@@ -1,7 +1,9 @@
-const XLSX = require('H:/amzain mina/amz-upload/node_modules/xlsx');
+const { dirs } = require('./lib/paths');
+const XLSX = require(dirs.xlsxModule);
 const fs = require('fs');
+const path = require('path');
 
-const wb = XLSX.readFile('H:/amzain mina/browsers/noon-seller/templates/Food_Containers__Download_English.xlsx');
+const wb = XLSX.readFile(dirs.noonTemplate);
 const rows = XLSX.utils.sheet_to_json(wb.Sheets['Classification Directory'], { header: 1, defval: '' });
 const header = rows[0];
 console.log('header:', JSON.stringify(header));
@@ -14,5 +16,5 @@ console.log('triples:', triples.length, 'families:', fams.length);
 const kd = triples.filter(t => /kitchen/i.test(t.family));
 console.log('kitchen triples:', kd.length);
 console.log('kitchen types:', [...new Set(kd.map(t => t.type))].join(' | '));
-fs.writeFileSync('H:/amzain mina/noon-upload/classification.json', JSON.stringify(triples, null, 1));
+fs.writeFileSync(path.join(dirs.config, 'classification.json'), JSON.stringify(triples, null, 1));
 console.log('saved classification.json');

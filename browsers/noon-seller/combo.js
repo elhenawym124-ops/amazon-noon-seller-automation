@@ -21,6 +21,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
     return lists.map(l => ({ label: l.getAttribute('aria-label'), opts: Array.from(l.querySelectorAll('[role="option"]')).map(o => (o.innerText || '').trim()) }));
   });
   console.log('LISTS:', JSON.stringify(info));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/combo-' + idx + '.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/combo-' + idx + '.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

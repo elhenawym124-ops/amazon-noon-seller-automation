@@ -6,15 +6,15 @@ const path = require('path');
 const dns = require('dns');
 const https = require('https');
 const { execFileSync } = require('child_process');
+const { dirs, resolve } = require('./lib/paths');
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
-const OUT = __dirname;
-const IMG_DIR = path.join(OUT, 'img-cache');
+const IMG_DIR = dirs.imgCache;
 fs.mkdirSync(IMG_DIR, { recursive: true });
 
-const cfgPath = process.argv[2];
-const outPath = process.argv[3];
-const cfg = JSON.parse(fs.readFileSync(path.isAbsolute(cfgPath) ? cfgPath : path.join(OUT, cfgPath), 'utf8'));
+const cfgPath = resolve(process.argv[2]);
+const outPath = resolve(process.argv[3]);
+const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf8'));
 
 const ipCache = new Map();
 function resolveIp(host) {
@@ -67,6 +67,6 @@ function catbox(file) {
     }
     if (hosted.length) p.images = hosted;
   }
-  fs.writeFileSync(path.isAbsolute(outPath) ? outPath : path.join(OUT, outPath), JSON.stringify(cfg, null, 1), 'utf8');
+  fs.writeFileSync(outPath, JSON.stringify(cfg, null, 1), 'utf8');
   console.log('written', outPath);
 })().catch((e) => { console.error('FAILED', e.message); process.exit(1); });

@@ -11,7 +11,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   const page = pages.find(p => p.url().includes('noon')) || pages[0];
   await page.bringToFront();
   await page.waitForTimeout(2000);
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/shot1.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/shot1.png' });
   const text = await page.evaluate(() => document.body ? document.body.innerText.slice(0, 1500) : 'no body');
   console.log('---TEXT---');
   console.log(text);

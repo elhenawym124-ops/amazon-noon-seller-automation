@@ -4,6 +4,8 @@
 |---|---|
 | `../README.md` | خريطة مساحة العمل وفتح الحسابات |
 | `../amz-upload/README.md` | تقسيمة `amz-upload` والأوامر الجديدة |
+| `../hv-pipeline/README.md` | خط بيانات HomeVista والأوامر |
+| `../noon-upload/README.md` | فيدات نون (NIS/أسعار/مخزون) |
 | `../amz-upload/TASKS.md` | مهام وحالة رفع أمازون (Level-Up) |
 | `../hv-pipeline/STATUS.md` | حالة خط HomeVista والدفعات المرفوعة |
 | `../browsers/noon-seller/README.md` | تشغيل نون: تسجيل الدخول، NIS، الأسعار، المخزون |

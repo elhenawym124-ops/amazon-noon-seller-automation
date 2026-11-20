@@ -2,7 +2,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
 const fs = require('fs');
 
 (async () => {
-  const out = process.argv[2] || 'H:/amzain mina/noon-upload/catalog_export.csv';
+  const out = process.argv[2] || 'H:/amzain/noon-upload/catalog_export.csv';
   const browser = await chromium.connectOverCDP('http://localhost:9222', { timeout: 60000 });
   const ctx = browser.contexts()[0];
   const page = ctx.pages().find(p => p.url().includes('noon-catalog')) || ctx.pages()[0];
@@ -25,6 +25,6 @@ const fs = require('fs');
   console.log('export clicked:', clicked);
   const dl = await dlP;
   if (dl) { await dl.saveAs(out); console.log('SAVED', out, fs.statSync(out).size); }
-  else { console.log('no download'); await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/export-cat.png' }); }
+  else { console.log('no download'); await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/export-cat.png' }); }
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

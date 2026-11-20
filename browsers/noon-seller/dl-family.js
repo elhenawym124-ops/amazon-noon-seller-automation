@@ -1,7 +1,7 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
 
-const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUTDIR = 'H:/amzain/browsers/noon-seller/templates';
 fs.mkdirSync(OUTDIR, { recursive: true });
 
 async function clickText(page, text, exact = true) {
@@ -53,7 +53,7 @@ async function clickText(page, text, exact = true) {
 
   const btns = await page.evaluate(() => Array.from(document.querySelectorAll('button')).filter(b => /download/i.test(b.innerText || '')).map(b => (b.innerText || '').trim() + ':' + b.disabled));
   console.log('buttons:', JSON.stringify(btns));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/family-state.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/family-state.png' });
 
   if (outName) {
     const dlP = page.waitForEvent('download', { timeout: 60000 }).catch(() => null);

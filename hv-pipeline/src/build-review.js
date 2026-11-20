@@ -5,10 +5,10 @@ const http = require('http');
 const dns = require('dns');
 const fs = require('fs');
 const path = require('path');
+const { dirs } = require('./lib/paths');
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
-const OUT = __dirname;
-const cands = JSON.parse(fs.readFileSync(path.join(OUT, 'candidates.json'), 'utf8')).filter((c) => c.keep);
+const cands = JSON.parse(fs.readFileSync(path.join(dirs.data, 'candidates.json'), 'utf8')).filter((c) => c.keep);
 
 const ipCache = new Map();
 function ip(host) {
@@ -68,7 +68,7 @@ function head(url) {
 <div class="meta">السعر = سعر المورد × 2 · الحد الأدنى 60 ج · أقرب أول</div>
 <table><thead><tr><th>#</th><th>صورة</th><th>المنتج</th><th>سعر المورد</th><th>سعر البيع</th></tr></thead>
 <tbody>${rows}</tbody></table></html>`;
-  fs.writeFileSync(path.join(OUT, 'review.html'), html, 'utf8');
+  fs.writeFileSync(path.join(dirs.reports, 'review.html'), html, 'utf8');
   console.log('\nreview.html written:', cands.length, 'rows');
 })();
 

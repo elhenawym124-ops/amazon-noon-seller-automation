@@ -3,10 +3,10 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { dirs } = require('./lib/paths');
 
-const OUT = __dirname;
-const tg = JSON.parse(fs.readFileSync(path.join(OUT, 'telegram-posts.json'), 'utf8'));
-const el = JSON.parse(fs.readFileSync(path.join(OUT, 'elbatal-products.json'), 'utf8'));
+const tg = JSON.parse(fs.readFileSync(path.join(dirs.data, 'telegram-posts.json'), 'utf8'));
+const el = JSON.parse(fs.readFileSync(path.join(dirs.data, 'elbatal-products.json'), 'utf8'));
 
 const MIN_SELL = 60;
 const MULT = 2;
@@ -120,7 +120,7 @@ for (const p of el) {
 }
 
 cands.sort((a, b) => (Date.parse(b.date || 0) || 0) - (Date.parse(a.date || 0) || 0));
-fs.writeFileSync(path.join(OUT, 'candidates.json'), JSON.stringify(cands, null, 1), 'utf8');
+fs.writeFileSync(path.join(dirs.data, 'candidates.json'), JSON.stringify(cands, null, 1), 'utf8');
 
 const keep = cands.filter((c) => c.keep);
 console.log('candidates:', cands.length, '| pass price rule (>=60 EGP after x2):', keep.length);

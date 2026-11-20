@@ -48,7 +48,7 @@ Isolated Chrome instance dedicated to the Noon seller account.
 - Working capture pattern: open inventory page and capture the request in the Playwright MCP
   browser, then replay it from a **new tab on a static same-origin page** (the SPA redirects
   to `/product-search/bulk` and kills the execution context otherwise).
-- Dump: `H:\amzain\amz-upload\levelup_listings.json` (561 listings, 544 ACTIVE).
+- Dump: `H:\amzain\amz-upload\data\levelup_listings.json` (561 listings, 544 ACTIVE).
 
 ## Scripts
 | File | Purpose |
@@ -58,7 +58,7 @@ Isolated Chrome instance dedicated to the Noon seller account.
 | `run-import.js` | end-to-end: select Content → NIS → Next → attach xlsx → Submit |
 | `poll-imports.js` | poll Imports list until processing finishes |
 | `get-report.js "Error File"` | download the import error file |
-| `H:\amzain\noon-upload\build-nis.js` | build NIS xlsx (parent+child rows) from listings |
+| `H:\amzain\noon-upload\src\build-nis.js` | build NIS xlsx (parent+child rows) from listings |
 
 ## Price update (works)
 Import type `Pricing` → subtype `Price Update`. The accepted file is a plain CSV with exactly:

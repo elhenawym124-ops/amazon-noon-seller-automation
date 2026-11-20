@@ -17,6 +17,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   await page.waitForTimeout(4500);
 
   console.log((await page.evaluate(() => document.body.innerText)).slice(0, 1600));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/type-' + type.replace(/\s+/g, '_') + '.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/type-' + type.replace(/\s+/g, '_') + '.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

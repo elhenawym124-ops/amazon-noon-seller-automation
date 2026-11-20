@@ -1,6 +1,8 @@
+const { dirs } = require('./lib/paths');
 const fs = require('fs');
+const path = require('path');
 
-const raw = fs.readFileSync('H:/amzain mina/noon-upload/reports/errors_kitchen_batch.csv', 'utf8').replace(/^\uFEFF/, '');
+const raw = fs.readFileSync(path.join(dirs.noonReports, 'errors_kitchen_batch.csv'), 'utf8').replace(/^\uFEFF/, '');
 function parseCSV(t) {
   const rows = []; let cur = [], field = '', inQ = false;
   for (let i = 0; i < t.length; i++) {
@@ -19,7 +21,7 @@ const hdr = rows[0];
 const iTitle = hdr.indexOf('product_title');
 const iSku = hdr.indexOf('seller_sku');
 
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
 const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
 const found = new Set();
@@ -33,5 +35,5 @@ for (const r of rows.slice(1)) {
 }
 const list = [...found];
 console.log('total skus to re-create:', list.length);
-fs.writeFileSync('H:/amzain mina/noon-upload/failed_skus.json', JSON.stringify(list, null, 1));
+fs.writeFileSync(path.join(dirs.state, 'failed_skus.json'), JSON.stringify(list, null, 1));
 console.log(list.join(', '));

@@ -33,7 +33,7 @@ const fs = require('fs');
   });
   const dl = await dlP;
   if (dl) {
-    const f = 'H:/amzain mina/browsers/noon-seller/templates/' + outName;
+    const f = 'H:/amzain/browsers/noon-seller/templates/' + outName;
     await dl.saveAs(f);
     console.log('SAVED', f, fs.statSync(f).size);
   } else console.log('no download');

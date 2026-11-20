@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUT = 'H:/amzain mina/noon-upload/reports';
+const OUT = 'H:/amzain/noon-upload/reports';
 fs.mkdirSync(OUT, { recursive: true });
 
 (async () => {
@@ -18,7 +18,7 @@ fs.mkdirSync(OUT, { recursive: true });
   }, kind);
   console.log('clicked', kind, clicked);
   const dl = await dlPromise;
-  if (!dl) { console.log('no download'); await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/report-fail.png' }); }
+  if (!dl) { console.log('no download'); await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/report-fail.png' }); }
   else {
     const p = OUT + '/' + dl.suggestedFilename();
     await dl.saveAs(p);

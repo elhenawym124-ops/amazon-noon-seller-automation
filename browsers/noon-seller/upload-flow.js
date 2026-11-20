@@ -17,7 +17,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
     console.log('TEXT:\n' + (await page.evaluate(() => document.body.innerText)).slice(0, 1800));
     const inputs = await page.evaluate(() => Array.from(document.querySelectorAll('input')).map(i => ({ type: i.type, name: i.name, id: i.id, ph: i.placeholder, accept: i.accept })));
     console.log('INPUTS:', JSON.stringify(inputs));
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/upload-step.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/upload-step.png' });
   }
 
   if (action === 'upload') {
@@ -29,7 +29,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
       await input.first().setInputFiles(file);
       await page.waitForTimeout(8000);
       console.log('TEXT AFTER UPLOAD:\n' + (await page.evaluate(() => document.body.innerText)).slice(0, 1500));
-      await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/uploaded.png' });
+      await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/uploaded.png' });
     }
   }
 
@@ -42,7 +42,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
     await page.waitForTimeout(9000);
     console.log('URL:', page.url());
     console.log('TEXT:\n' + (await page.evaluate(() => document.body.innerText)).slice(0, 1500));
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/submitted.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/submitted.png' });
   }
 
   await browser.close();

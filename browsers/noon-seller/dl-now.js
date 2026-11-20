@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUTDIR = 'H:/amzain/browsers/noon-seller/templates';
 
 (async () => {
   const outName = process.argv[2];

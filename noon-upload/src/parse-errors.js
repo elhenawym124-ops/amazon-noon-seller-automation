@@ -1,6 +1,8 @@
+const { dirs } = require('./lib/paths');
 const fs = require('fs');
+const path = require('path');
 
-const raw = fs.readFileSync('H:/amzain mina/noon-upload/reports/errors.csv', 'utf8').replace(/^\uFEFF/, '');
+const raw = fs.readFileSync(path.join(dirs.noonReports, 'errors.csv'), 'utf8').replace(/^\uFEFF/, '');
 
 function parseCSV(t) {
   const rows = [];
@@ -34,7 +36,7 @@ for (const r of rows.slice(1)) {
   any.forEach(s => skus.add(s));
 }
 console.log('rows', rows.length - 1, 'sku col', iSku, 'unique skus', skus.size);
-fs.writeFileSync('H:/amzain mina/noon-upload/failed_skus.json', JSON.stringify([...skus], null, 1));
+fs.writeFileSync(path.join(dirs.state, 'failed_skus.json'), JSON.stringify([...skus], null, 1));
 console.log([...skus].join(', '));
 
 // error message histogram

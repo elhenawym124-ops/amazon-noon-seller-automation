@@ -2,7 +2,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
 
 (async () => {
   const url = process.argv[2];
-  const shot = process.argv[3] || 'H:/amzain mina/browsers/noon-seller/page.png';
+  const shot = process.argv[3] || 'H:/amzain/browsers/noon-seller/page.png';
   const browser = await chromium.connectOverCDP('http://localhost:9222');
   const ctx = browser.contexts()[0];
   const page = ctx.pages()[0];

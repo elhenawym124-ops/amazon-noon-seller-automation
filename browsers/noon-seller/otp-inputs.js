@@ -13,6 +13,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
     cls: el.className.slice(0, 70)
   })));
   console.log(JSON.stringify(els, null, 1));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/otp-wait.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/otp-wait.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

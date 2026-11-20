@@ -2,10 +2,10 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { dirs } = require('./lib/paths');
 
-const OUT = __dirname;
 const MIN_SELL = 60;
-const cands = JSON.parse(fs.readFileSync(path.join(OUT, 'candidates.json'), 'utf8')).filter((c) => c.keep);
+const cands = JSON.parse(fs.readFileSync(path.join(dirs.data, 'candidates.json'), 'utf8')).filter((c) => c.keep);
 
 const TYPES = [
   { ptype: 'HOME_ORGANIZERS_AND_STORAGE', node: '21863799031', label: 'منظم وتخزين منزلي', re: /برطمان|برطمن|منظم|رف\b|استاند|ستاند|توابل|علب|صندوق|درج|تنظيم|ترتيب|شماعة|شماعه|خزانة|سلة|حامل|علبة|زجاجة زيت|دورق|صواني خشب/i },
@@ -170,8 +170,8 @@ for (const c of cands) {
   });
 }
 
-fs.writeFileSync(path.join(OUT, 'listings.json'), JSON.stringify(listings, null, 1), 'utf8');
-fs.writeFileSync(path.join(OUT, 'skipped.json'), JSON.stringify(skipped, null, 1), 'utf8');
+fs.writeFileSync(path.join(dirs.data, 'listings.json'), JSON.stringify(listings, null, 1), 'utf8');
+fs.writeFileSync(path.join(dirs.data, 'skipped.json'), JSON.stringify(skipped, null, 1), 'utf8');
 
 const byType = {};
 listings.forEach((l) => { byType[l.productType] = (byType[l.productType] || 0) + 1; });

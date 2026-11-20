@@ -1,5 +1,5 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
-const SHOT = 'H:/amzain mina/browsers/noon-seller/';
+const SHOT = 'H:/amzain/browsers/noon-seller/';
 
 (async () => {
   const code = (process.argv[2] || '').replace(/\D/g, '');

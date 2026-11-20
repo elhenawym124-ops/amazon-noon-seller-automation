@@ -1,12 +1,13 @@
-const XLSX = require('H:/amzain mina/amz-upload/node_modules/xlsx');
+const { dirs, resolve } = require('./lib/paths');
+const XLSX = require(dirs.xlsxModule);
 const fs = require('fs');
 const { mapType } = require('./mapping');
 
-const TPL = process.argv[2] || 'H:/amzain mina/browsers/noon-seller/templates/Food_Containers__Download_English.xlsx';
-const OUT = process.argv[3] || 'H:/amzain mina/noon-upload/kitchen_nis.xlsx';
+const TPL = process.argv[2] || dirs.noonTemplate;
+const OUT = process.argv[3] || require('path').join(dirs.feeds, 'kitchen_nis.xlsx');
 const FAMILY = process.argv[4] || 'Kitchen & Dining';
 
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
 
 function cleanTitle(t) {
   let s = (t || '').replace(/\s+/g, ' ').trim();
@@ -56,7 +57,7 @@ function pickCapacity(t) {
   return { v, u };
 }
 
-const SKU_FILTER = process.argv[5] && fs.existsSync(process.argv[5]) ? new Set(JSON.parse(fs.readFileSync(process.argv[5], 'utf8'))) : null;
+const SKU_FILTER = process.argv[5] && fs.existsSync(resolve(process.argv[5])) ? new Set(JSON.parse(fs.readFileSync(resolve(process.argv[5]), 'utf8'))) : null;
 
 const picked = listings.rows.filter(r => {
   if (!(r.status && r.status.status === 'ACTIVE' && r.listingData)) return false;

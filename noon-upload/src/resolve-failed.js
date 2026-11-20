@@ -1,6 +1,8 @@
+const { dirs } = require('./lib/paths');
 const fs = require('fs');
+const path = require('path');
 
-const raw = fs.readFileSync('H:/amzain mina/noon-upload/reports/errors.csv', 'utf8').replace(/^\uFEFF/, '');
+const raw = fs.readFileSync(path.join(dirs.noonReports, 'errors.csv'), 'utf8').replace(/^\uFEFF/, '');
 
 function parseCSV(t) {
   const rows = [];
@@ -24,7 +26,7 @@ const hdr = rows[0];
 const iTitle = hdr.indexOf('product_title');
 const iSku = hdr.indexOf('seller_sku');
 
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
 const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const byTitle = new Map();
 for (const r of listings.rows) {
@@ -45,4 +47,4 @@ console.log('resolved skus:', found.size);
 console.log([...found].join(', '));
 console.log('unresolved titles:', unresolved.length);
 console.log(unresolved.slice(0, 10).join('\n'));
-fs.writeFileSync('H:/amzain mina/noon-upload/failed_skus2.json', JSON.stringify([...found], null, 1));
+fs.writeFileSync(path.join(dirs.state, 'failed_skus2.json'), JSON.stringify([...found], null, 1));

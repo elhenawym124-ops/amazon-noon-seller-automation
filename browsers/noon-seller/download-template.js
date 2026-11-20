@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUT = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUT = 'H:/amzain/browsers/noon-seller/templates';
 fs.mkdirSync(OUT, { recursive: true });
 
 (async () => {
@@ -23,7 +23,7 @@ fs.mkdirSync(OUT, { recursive: true });
   await page.waitForTimeout(3000);
 
   console.log('PAGE TEXT:\n' + (await page.evaluate(() => document.body.innerText)).slice(0, 1800));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/selected-import.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/selected-import.png' });
 
   const dlPromise = page.waitForEvent('download', { timeout: 60000 }).catch(() => null);
   await page.evaluate(() => {

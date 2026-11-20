@@ -4,7 +4,7 @@ const fs = require('fs');
 (async () => {
   const code = process.argv[2];
   const outName = process.argv[3] || 'errors_batch.csv';
-  const OUT = 'H:/amzain mina/noon-upload/reports/' + outName;
+  const OUT = 'H:/amzain/noon-upload/reports/' + outName;
 
   const browser = await chromium.connectOverCDP('http://localhost:9222', { timeout: 60000 });
   const ctx = browser.contexts()[0];

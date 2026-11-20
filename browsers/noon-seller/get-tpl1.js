@@ -4,7 +4,7 @@ const fs = require('fs');
 (async () => {
   const type = process.argv[2];
   const outName = process.argv[3];
-  const OUT = 'H:/amzain mina/browsers/noon-seller/templates/' + outName;
+  const OUT = 'H:/amzain/browsers/noon-seller/templates/' + outName;
 
   const browser = await chromium.connectOverCDP('http://localhost:9222', { timeout: 60000 });
   const ctx = browser.contexts()[0];

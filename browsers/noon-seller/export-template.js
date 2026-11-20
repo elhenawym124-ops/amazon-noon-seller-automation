@@ -5,7 +5,7 @@ const fs = require('fs');
   const status = process.argv[2] || 'Not Live';
   const market = process.argv[3] || 'noon';
   const outName = process.argv[4] || 'price_export.xlsx';
-  const OUT = 'H:/amzain mina/noon-upload/' + outName;
+  const OUT = 'H:/amzain/noon-upload/' + outName;
 
   const browser = await chromium.connectOverCDP('http://localhost:9222', { timeout: 60000 });
   const ctx = browser.contexts()[0];
@@ -34,7 +34,7 @@ const fs = require('fs');
     if (b && !b.disabled) b.click();
   });
   const dl = await dlP;
-  if (!dl) { console.log('no download'); await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/export-fail.png' }); }
+  if (!dl) { console.log('no download'); await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/export-fail.png' }); }
   else {
     await dl.saveAs(OUT);
     console.log('SAVED', OUT, fs.statSync(OUT).size);

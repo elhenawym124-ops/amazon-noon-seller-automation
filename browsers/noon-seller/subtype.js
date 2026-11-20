@@ -1,7 +1,7 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
 
-const OUT = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUT = 'H:/amzain/browsers/noon-seller/templates';
 fs.mkdirSync(OUT, { recursive: true });
 
 async function openCombo(page, label) {
@@ -26,7 +26,7 @@ async function openCombo(page, label) {
   if (mode === 'list') {
     const r = await openCombo(page, 'Select the import subtype');
     console.log('subtype options:', JSON.stringify(r.opts));
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/subtype.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/subtype.png' });
   }
 
   if (mode === 'pick') {
@@ -52,7 +52,7 @@ async function openCombo(page, label) {
       await dl.saveAs(p);
       console.log('DOWNLOADED:', p, fs.statSync(p).size);
     } else console.log('no download');
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/subtype-picked.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/subtype-picked.png' });
   }
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

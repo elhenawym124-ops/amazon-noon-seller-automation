@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUTDIR = 'H:/amzain/browsers/noon-seller/templates';
 
 const dlEnabled = page => page.evaluate(() => {
   const b = Array.from(document.querySelectorAll('button')).find(x => (x.innerText || '').trim() === 'Download English');
@@ -62,7 +62,7 @@ const dlEnabled = page => page.evaluate(() => {
     if (dl) { const f = OUTDIR + '/' + outName; await dl.saveAs(f); console.log('SAVED', f, fs.statSync(f).size); }
     else console.log('no download');
   } else {
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/catfail.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/catfail.png' });
     console.log('FAILED');
   }
   await browser.close();

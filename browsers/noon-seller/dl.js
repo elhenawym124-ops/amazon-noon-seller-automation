@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUT = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUT = 'H:/amzain/browsers/noon-seller/templates';
 fs.mkdirSync(OUT, { recursive: true });
 
 const before = new Set(fs.existsSync(OUT) ? fs.readdirSync(OUT) : []);
@@ -46,6 +46,6 @@ const before = new Set(fs.existsSync(OUT) ? fs.readdirSync(OUT) : []);
 
   const after = fs.readdirSync(OUT).filter(f => !before.has(f) && !f.endsWith('.crdownload'));
   console.log('NEW FILES:', after);
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/dl-attempt.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/dl-attempt.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

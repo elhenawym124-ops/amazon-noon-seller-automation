@@ -6,8 +6,8 @@ const dns = require('dns');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { dirs } = require('./lib/paths');
 
-const OUT_DIR = __dirname;
 const STORE_ORIGIN = 'https://elbatal-import.com';
 const API_HOST = 'production.api.vondera.app';
 
@@ -74,7 +74,7 @@ function getJson(url, ip) {
     if (pageNo > 200) break;
   }
 
-  const rawPath = path.join(OUT_DIR, 'raw-elbatal.json');
+  const rawPath = path.join(dirs.data, 'raw-elbatal.json');
   fs.writeFileSync(rawPath, JSON.stringify({ meta, count: items.length, items }, null, 1), 'utf8');
 
   // Normalized view
@@ -94,7 +94,7 @@ function getJson(url, ip) {
     images: (it.images || []).map((im) => im.originalSize || im).filter(Boolean),
     variants: it.variantsCount || 0,
   }));
-  fs.writeFileSync(path.join(OUT_DIR, 'elbatal-products.json'), JSON.stringify(norm, null, 1), 'utf8');
+  fs.writeFileSync(path.join(dirs.data, 'elbatal-products.json'), JSON.stringify(norm, null, 1), 'utf8');
 
   const sellX2 = norm.filter((p) => p.price * 2 >= 60);
   console.log('---');

@@ -1,7 +1,9 @@
+const { dirs, resolve } = require('./lib/paths');
 const fs = require('fs');
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
-const skus = JSON.parse(fs.readFileSync(process.argv[2] || 'H:/amzain mina/noon-upload/kitchen_created.json', 'utf8'));
-const out = process.argv[3] || 'H:/amzain mina/noon-upload/prices_all.csv';
+const path = require('path');
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
+const skus = JSON.parse(fs.readFileSync(resolve(process.argv[2] || path.join(dirs.state, 'kitchen_created.json')), 'utf8'));
+const out = resolve(process.argv[3] || path.join(dirs.feeds, 'prices_all.csv'));
 
 const bySku = new Map(listings.rows.map(r => [r.coreListingFields.sku, r]));
 const lines = ['country_code,partner_sku,price,sale_price,sale_start,sale_end,id_partner'];

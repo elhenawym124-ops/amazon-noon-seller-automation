@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUTDIR = 'H:/amzain/browsers/noon-seller/templates';
 
 (async () => {
   const [outName, yArg] = process.argv.slice(2);
@@ -23,7 +23,7 @@ const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
     });
     const dl = await dlP;
     if (dl) { const f = OUTDIR + '/' + outName; await dl.saveAs(f); console.log('SAVED', f, fs.statSync(f).size); }
-    else { console.log('no download'); await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/coord-fail.png' }); }
+    else { console.log('no download'); await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/coord-fail.png' }); }
   }
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

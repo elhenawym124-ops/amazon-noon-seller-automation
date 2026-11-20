@@ -13,6 +13,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   await page.waitForTimeout(2000);
   const opts = await page.evaluate(() => Array.from(document.querySelectorAll('[role="option"]')).map(o => (o.innerText || '').trim().replace(/\s+/g, ' ')));
   console.log('OPTIONS:', JSON.stringify(opts));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/type-dropdown.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/type-dropdown.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

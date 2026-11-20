@@ -1,10 +1,12 @@
-const XLSX = require('H:/amzain mina/amz-upload/node_modules/xlsx');
+const { dirs } = require('./lib/paths');
+const XLSX = require(dirs.xlsxModule);
 const fs = require('fs');
+const path = require('path');
 
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
 
-const TPL = 'H:/amzain mina/browsers/noon-seller/templates/Food_Containers__Download_English.xlsx';
-const OUT = process.argv[2] || 'H:/amzain mina/noon-upload/pilot_nis.xlsx';
+const TPL = dirs.noonTemplate;
+const OUT = process.argv[2] || path.join(dirs.feeds, 'pilot_nis.xlsx');
 const LIMIT = Number(process.argv[3] || 5);
 const TYPE_FILTER = process.argv[4] || 'FOOD_STORAGE_CONTAINER';
 
@@ -126,7 +128,7 @@ for (let rr = lastRow + 1; rr <= lastRow + 5; rr++) {
 }
 ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: lastRow - 1, c: codes.length - 1 } });
 
-fs.mkdirSync('H:/amzain mina/noon-upload', { recursive: true });
+fs.mkdirSync(dirs.feeds, { recursive: true });
 XLSX.writeFile(wb, OUT);
 console.log('written', OUT, fs.statSync(OUT).size);
 console.log('first row:', JSON.stringify(data[0]));

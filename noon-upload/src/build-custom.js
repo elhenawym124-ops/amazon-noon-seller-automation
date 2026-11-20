@@ -1,11 +1,12 @@
-const XLSX = require('H:/amzain mina/amz-upload/node_modules/xlsx');
+const { dirs, resolve } = require('./lib/paths');
+const XLSX = require(dirs.xlsxModule);
 const fs = require('fs');
 
 // usage: node build-custom.js <template.xlsx> <out.xlsx> <assignments.json>
 // assignments: [{sku, family, type, subtype}]
 const [TPL, OUT, ASSIGN] = process.argv.slice(2);
-const jobs = JSON.parse(fs.readFileSync(ASSIGN, 'utf8').replace(/^\uFEFF/, ''));
-const listings = JSON.parse(fs.readFileSync('H:/amzain mina/amz-upload/levelup_listings.json', 'utf8'));
+const jobs = JSON.parse(fs.readFileSync(resolve(ASSIGN), 'utf8').replace(/^\uFEFF/, ''));
+const listings = JSON.parse(fs.readFileSync(dirs.listings, 'utf8'));
 const bySku = new Map(listings.rows.map(r => [r.coreListingFields.sku, r]));
 
 function cleanTitle(t) {

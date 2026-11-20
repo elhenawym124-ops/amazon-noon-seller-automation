@@ -18,6 +18,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   console.log('URL:', page.url());
   console.log('TEXT:', (await page.evaluate(() => document.body.innerText)).slice(0, 600).replace(/\n+/g, ' | '));
   console.log('NET:', net.slice(0, 15).join('\n') || '(none)');
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/submit3.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/submit3.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

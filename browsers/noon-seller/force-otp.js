@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const EMAIL = 'btoo3e3lanat1@gmail.com';
-const SHOT = 'H:/amzain mina/browsers/noon-seller/';
+const SHOT = 'H:/amzain/browsers/noon-seller/';
 
 (async () => {
   const browser = await chromium.connectOverCDP('http://localhost:9222');

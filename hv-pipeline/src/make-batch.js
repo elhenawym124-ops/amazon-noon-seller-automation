@@ -4,13 +4,13 @@
 const fs = require('fs');
 const path = require('path');
 
+const { dirs } = require('./lib/paths');
 const TYPE = process.argv[2] || 'HOME_ORGANIZERS_AND_STORAGE';
 const SIZE = Number(process.argv[3] || 15);
-const OUT = __dirname;
 const slug = TYPE.toLowerCase().replace(/_/g, '-');
 
-const all = JSON.parse(fs.readFileSync(path.join(OUT, 'listings.json'), 'utf8'));
-const statePath = path.join(OUT, 'submitted.json');
+const all = JSON.parse(fs.readFileSync(path.join(dirs.data, 'listings.json'), 'utf8'));
+const statePath = path.join(dirs.data, 'submitted.json');
 const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
 state.batches = state.batches || [];
 
@@ -34,7 +34,7 @@ const cfg = {
 
 const n = state.batches.reduce((m, b) => Math.max(m, b.n || 0), 0) + 1;
 const cfgFile = `cfg-${slug}-${n}.json`;
-fs.writeFileSync(path.join(OUT, cfgFile), JSON.stringify(cfg, null, 1), 'utf8');
+fs.writeFileSync(path.join(dirs.config, cfgFile), JSON.stringify(cfg, null, 1), 'utf8');
 state.batches.push({ n, type: TYPE, cfgFile, file: `hv_${slug.split('-')[0]}_${n}_feed.xlsx`, skus: batch.map((p) => p.sku), status: 'planned' });
 fs.writeFileSync(statePath, JSON.stringify(state, null, 1), 'utf8');
 console.log('wrote', cfgFile, '| products:', batch.length, '| left:', pool.length - batch.length);

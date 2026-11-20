@@ -10,7 +10,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   await btn.click();
   await page.waitForTimeout(7000);
   console.log('URL:', page.url());
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/otp-step.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/otp-step.png' });
   console.log('---TEXT---\n' + await page.evaluate(() => document.body.innerText.slice(0, 1500)));
   const els = await page.evaluate(() => Array.from(document.querySelectorAll('input,button')).map(el => ({
     tag: el.TAGNAME || el.tagName, type: el.type || '', name: el.name || '', id: el.id || '',

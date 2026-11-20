@@ -27,6 +27,6 @@ const fs = require('fs');
     return { combos, btns: btns.filter(b => b.txt) };
   });
   console.log(JSON.stringify(info, null, 1));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/pricing-step.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/pricing-step.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

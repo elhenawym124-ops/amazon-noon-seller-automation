@@ -15,6 +15,6 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
     }));
   });
   console.log(JSON.stringify(info, null, 1));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/cat-state.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/cat-state.png' });
   await browser.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

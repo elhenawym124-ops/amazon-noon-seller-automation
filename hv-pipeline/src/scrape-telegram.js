@@ -6,6 +6,7 @@ const dns = require('dns');
 const fs = require('fs');
 const path = require('path');
 const fsmod = require('fs');
+const { dirs } = require('./lib/paths');
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
 
@@ -25,7 +26,6 @@ function resolveIp(host) {
 
 const CHANNELS = (process.env.TG_CHANNELS || 'Sgropnem,Bborkangroup').split(',');
 const DAYS = Number(process.env.TG_DAYS || 7);
-const OUT = __dirname;
 
 function get(url) {
   return new Promise(async (resolve, reject) => {
@@ -136,7 +136,7 @@ function parsePosts(html, channel) {
     }
   }
   all.sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0));
-  fs.writeFileSync(path.join(OUT, 'telegram-posts.json'), JSON.stringify(all, null, 1), 'utf8');
+  fs.writeFileSync(path.join(dirs.data, 'telegram-posts.json'), JSON.stringify(all, null, 1), 'utf8');
 
   const withPrice = all.filter((p) => /(?:بسعر|السعر|سعر|جنيه|ج\.م|EGP)/.test(p.text));
   console.log('---');

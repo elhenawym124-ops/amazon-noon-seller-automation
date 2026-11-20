@@ -9,12 +9,12 @@
 - سعر البيع = سعر المورد × 2
 - لا شيء أقل من 60 ج (25 منتج اتشالوا)
 - 253 مرشح مؤهل · المدى 60–2,698 ج · المتوسط 298 ج
-- مراجعة بصرية: `hv-pipeline/review.html`
+- مراجعة بصرية: `hv-pipeline/output/reports/review.html`
 
 ## التصنيف والملفات
 | النوع | العدد | القالب |
 |---|---|---|
-| HOME_ORGANIZERS_AND_STORAGE | 96 | `amz-upload/HV_ORG_AR.xlsm` ✅ متولّد من HomeVista |
+| HOME_ORGANIZERS_AND_STORAGE | 96 | `amz-upload/templates/HV_ORG_AR.xlsm` ✅ متولّد من HomeVista |
 | COOKWARE_SET | 20 | ❌ محتاج توليد |
 | DRINKING_CUP | 9 | ❌ محتاج توليد |
 | KITCHEN_TOOLS | 9 | ❌ محتاج توليد |
@@ -33,7 +33,7 @@
 **الإجمالي: 85 SKU اترفعوا · كلهم اتعملوا (created) · 1 نظيف و84 بخطأ سمة واحدة**
 > حسب تقرير المعالجة (Processing Summary): `نجحت 1 · نجحت مع أخطاء أخرى 84 · فشلت 0`
 > يعني المنتجات موجودة على الحساب، بس أمازون معلّمة عليها "Action required" بسبب سمة واحدة.
-> تقرير الدفعة 7 محفوظ: `proc7.xlsx` (شيت "ملخص معالجة ملف التحميل" + صف لكل SKU).
+> تقرير الدفعة 7 محفوظ: `output/reports/proc7.xlsx` (شيت "ملخص معالجة ملف التحميل" + صف لكل SKU).
 
 ## ✅ نتيجة التشخيص الحاسمة (2026-11-11)
 | التجربة | الصفوف | النتيجة |
@@ -154,13 +154,11 @@ Action required = إجمالي الصفوف. الحل: **أعد الرفع + Val
 ## أوامر التشغيل (للاستكمال)
 ```powershell
 # فتح المتصفح
-powershell -ExecutionPolicy Bypass -File "H:\amzain mina\open-homevista.ps1"
+powershell -ExecutionPolicy Bypass -File H:\amzain\scripts\open-homevista.ps1
 
 # دفعة جديدة
-cd H:\amzain mina\hv-pipeline
-node make-batch.js HOME_ORGANIZERS_AND_STORAGE 15
-cd H:\amzain mina\amz-upload
-node build-feed.js HV_ORG_AR.xlsm ..\hv-pipeline\cfg-home-organizers-and-storage-<n>.json ..\hv-pipeline\hv_org_<n>_feed.xlsx
+node H:\amzain\hv-pipeline\src\make-batch.js HOME_ORGANIZERS_AND_STORAGE 15
+node H:\amzain\amz-upload\src\build-feed.js templates\HV_ORG_AR.xlsm ..\hv-pipeline\config\cfg-home-organizers-and-storage-<n>.json ..\hv-pipeline\output\feeds\hv_org_<n>_feed.xlsx
 ```
 ثم من المتصفح: Add products → Spreadsheet → ارفع الملف → **Validate your file** →
 اتأكد إن `Action required = 0` → **Submit** → لازم يروح على `listing/status?reference_id=...`

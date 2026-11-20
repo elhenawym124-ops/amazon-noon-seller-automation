@@ -31,7 +31,9 @@ H:\amzain\
 │  ├─ templates\             نماذج أمازون
 │  └─ output\feeds|summaries|reports\
 ├─ hv-pipeline\              خط بيانات HomeVista (سكرابنج → فلترة → listings)
+│  ├─ src\ config\ data\ output\
 ├─ noon-upload\              فيدات نون (NIS / أسعار / مخزون)
+│  ├─ src\ config\ data\ output\
 ├─ browsers\noon-seller\     أدوات وسكريبتات نون + قوالبها
 ├─ sample10\                 عينة مرجعية
 │
@@ -73,11 +75,14 @@ powershell -ExecutionPolicy Bypass -File H:\amzain\scripts\open-noon.ps1
 
 ## المخرجات
 
-`amz-upload` اتقسم بالكامل: الكود في `src\`، العدادات في `config\`، البيانات في `data\`،
-والفيدات والملخصات والتقارير في `output\`. التفاصيل والأوامر في `amz-upload\README.md`.
+كل موديول بقى مقسوم بنفس الشكل: الكود في `src\`، الإعدادات في `config\`، البيانات في `data\`،
+والفيدات والتقارير في `output\`:
 
-`hv-pipeline` و`noon-upload` لسه بتخطيطهم القديم — نفس التقسيمة هتتطبق عليهم
-بالترتيب مع اختبار بعد كل موديول.
+| الموديول | التفاصيل |
+|---|---|
+| `amz-upload` | `amz-upload\README.md` |
+| `hv-pipeline` | `hv-pipeline\README.md` |
+| `noon-upload` | `noon-upload\README.md` |
 
 ## نسخة احتياطية
 

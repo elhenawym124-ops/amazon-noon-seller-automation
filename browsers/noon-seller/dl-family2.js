@@ -1,6 +1,6 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
 const fs = require('fs');
-const OUTDIR = 'H:/amzain mina/browsers/noon-seller/templates';
+const OUTDIR = 'H:/amzain/browsers/noon-seller/templates';
 
 async function clickExact(page, text) {
   return page.evaluate((t) => {
@@ -54,7 +54,7 @@ const dlEnabled = page => page.evaluate(() => {
   }
 
   if (!(await dlEnabled(page))) {
-    await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/dl2-fail-' + (outName || 'x') + '.png' });
+    await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/dl2-fail-' + (outName || 'x') + '.png' });
     console.log('still disabled');
   } else if (outName) {
     const dlP = page.waitForEvent('download', { timeout: 90000 }).catch(() => null);

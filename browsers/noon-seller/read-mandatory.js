@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = 'H:/amzain mina/browsers/noon-seller/tpl_unzip/out/xl/';
+const path = 'H:/amzain/browsers/noon-seller/tpl_unzip/out/xl/';
 
 const styles = fs.readFileSync(path + 'styles.xml', 'utf8');
 const wb = fs.readFileSync(path + 'workbook.xml', 'utf8');

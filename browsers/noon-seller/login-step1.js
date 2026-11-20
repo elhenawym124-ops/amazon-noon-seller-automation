@@ -19,7 +19,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   await page.waitForTimeout(6000);
 
   console.log('URL:', page.url());
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/after-email.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/after-email.png' });
   console.log('---TEXT---\n' + await page.evaluate(() => document.body.innerText.slice(0, 1500)));
   const els = await page.evaluate(() => Array.from(document.querySelectorAll('input,button')).map(el => ({
     tag: el.tagName, type: el.type || '', name: el.name || '', id: el.id || '',

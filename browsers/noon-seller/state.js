@@ -11,7 +11,7 @@ const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/nod
   await page.waitForTimeout(2000);
   console.log('ACTIVE:', page.url(), '|', await page.title());
   console.log('TEXT:\n' + (await page.evaluate(() => document.body.innerText)).slice(0, 1200));
-  await page.screenshot({ path: 'H:/amzain mina/browsers/noon-seller/current.png' });
+  await page.screenshot({ path: 'H:/amzain/browsers/noon-seller/current.png' });
   const cookies = await ctx.cookies(['https://seller.noon.partners', 'https://login.noon.partners']);
   console.log('COOKIES:', cookies.map(c => c.name).join(', '));
   await browser.close();
