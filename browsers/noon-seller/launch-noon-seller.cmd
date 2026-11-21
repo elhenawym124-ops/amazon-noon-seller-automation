@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  Noon Seller - isolated Chrome instance
-rem  Account : btoo3e3lanat1@gmail.com
+rem  Account : set NOON_EMAIL env var (not stored in the repo)
 rem  Profile : H:\amzain\profiles\noon-seller
 rem  Fully separate cookies/cache/session from other browsers.
 rem ============================================================

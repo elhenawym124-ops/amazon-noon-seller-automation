@@ -3,6 +3,7 @@ profiles/
 
 # secrets
 secrets/
+browsers/noon-seller/local.config.json
 
 # dependencies
 node_modules/

@@ -4,7 +4,7 @@ Isolated Chrome instance dedicated to the Noon seller account.
 
 | Item | Value |
 |---|---|
-| Account | `btoo3e3lanat1@gmail.com` (seller name: Hala) |
+| Account | set via `NOON_EMAIL` env var or `local.config.json` (not stored in the repo) |
 | Profile folder | `H:\amzain\profiles\noon-seller` |
 | Launcher | `launch-noon-seller.cmd` / desktop shortcut **Noon Seller** |
 | CDP port | `9222` (needs `--remote-debugging-port=9222`; reconnect with `chromium.connectOverCDP('http://localhost:9222')`) |
@@ -14,6 +14,23 @@ Isolated Chrome instance dedicated to the Noon seller account.
 | Store | Elsherbiny factory — 44 live SKUs at start |
 
 ## Login notes
+
+### Account email setup
+The seller email is not committed. Before running any login script, either:
+
+```powershell
+$env:NOON_EMAIL = 'you@example.com'      # current session
+```
+
+or create `browsers/noon-seller/local.config.json` (git-ignored):
+
+```json
+{ "email": "you@example.com" }
+```
+
+`account.js` reads `NOON_EMAIL` first, then `local.config.json`, and throws a clear
+error if neither is set.
+
 - Login requires a **passkey**, Google, or **Email OTP**. OTP code goes to the account mailbox.
 - The "Continue with Email OTP" button stays `disabled` until the passkey check resolves; if it
   never enables, force it:

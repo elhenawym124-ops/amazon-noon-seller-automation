@@ -1,5 +1,5 @@
 const { chromium } = require('C:/Users/mokhtar/AppData/Local/Programs/nodejs/node_modules/playwright');
-const EMAIL = 'btoo3e3lanat1@gmail.com';
+const { email: EMAIL } = require('./account');
 const SHOT = 'H:/amzain/browsers/noon-seller/';
 
 (async () => {
